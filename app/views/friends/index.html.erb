@@ -1,0 +1,49 @@
+<% if user_signed_in? %>
+  <p style="color: green">
+  <% content_for :title, "Friends" %>
+
+  <h1>Friends</h1>
+
+  <%= link_to "New friend", new_friend_path , class:"btn btn-success mb-3" %>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>First Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Twitter</th>
+        <th>User ID</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @friends.each do |friend| %>
+        <tr>
+          <td><%= friend.first_name %> <%= friend.last_name %></td>
+          <td><%= friend.email %></td>
+          <td><%= friend.phone %></td>
+          <td><%= friend.twitter %></td>
+          <td><%= friend.user_id %></td>
+         
+          <td>
+            <%= link_to "Show", friend, class: "btn btn-sm btn-primary" %>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_friend_path(friend), class: "btn btn-sm btn-warning" %>
+          </td>
+          <td>
+            <%= button_to "Delete", friend_path(friend.id) , method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+          </td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "New friend", new_friend_path , class:"btn btn-primary" %>
+<% else %>
+  <h1>Hello Hassan!</h1>
+  This is my first webpage.
+<% end %>

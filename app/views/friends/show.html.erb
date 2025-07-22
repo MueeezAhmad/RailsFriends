@@ -1,0 +1,13 @@
+<div class="card p-4 shadow mb-4">
+  <h1 class="display-4 mb-3"><%= @friend.first_name %> <%= @friend.last_name %></h1>
+  <p class="lead">Email: <strong><%= @friend.email %></strong></p>
+  <p class="lead">Phone: <strong><%= @friend.phone %></strong></p>
+
+  <hr class="my-4">
+
+  <div class="d-flex gap-2 flex-wrap">
+    <%= link_to "✏️ Edit this friend", edit_friend_path(@friend), class: "btn btn-warning" %>
+    <%= link_to "📋 Back to friends", friends_path, class: "btn btn-secondary" %>
+    <%= button_to "🗑️ Destroy this friend", @friend, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
+</div>
