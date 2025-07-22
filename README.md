@@ -32,26 +32,26 @@
 
 2. Install dependencies:
 
-bundle install
+   bundle install
 
 3. Set up the database:
 
- rails db:create
- rails db:migrate
+   rails db:create
+   rails db:migrate
 
 4. Start the Rails server:
 
- rails server
+   rails server
 
 5. Open your browser and go to:
 
- http://localhost:3000
+   http://localhost:3000
 
 Notes:
- This is a practice project to learn how Rails handles routing, controllers, views, models, and user authentication with Devise.
+   This is a practice project to learn how Rails handles routing, controllers, views, models, and user authentication with Devise.
 
 License
- This project is open source and free to use.
+   This project is open source and free to use.
 
 Developed by [Mueez Ahmad](https://github.com/MueeezAhmad) as part of a personal learning journey.
 
